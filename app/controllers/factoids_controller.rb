@@ -1,6 +1,6 @@
 class FactoidsController < ApplicationController
   before_action :set_factoid, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, :only => [:create]
+  skip_before_filter :verify_authenticity_token, :only => [:new, :create]
 
   # GET /factoids
   # GET /factoids.json
@@ -16,6 +16,11 @@ class FactoidsController < ApplicationController
   # GET /factoids/new
   def new
     @factoid = Factoid.new
+
+    respond_to do |format|
+      format.js {}
+      format.html
+    end
   end
 
   # GET /factoids/1/edit
