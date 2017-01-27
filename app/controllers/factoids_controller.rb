@@ -70,6 +70,6 @@ class FactoidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def factoid_params
-      params.require(:factoid).permit(:text)
+      params.require(:factoid).permit(:text, :url)
     end
 end

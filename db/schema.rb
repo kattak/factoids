@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170127021743) do
 
   create_table "factoids", force: :cascade do |t|
     t.text     "text"
+    t.text     "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
