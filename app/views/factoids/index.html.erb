@@ -16,7 +16,7 @@
     <% @factoids.each do |factoid| %>
       <tr>
         <td><%= factoid.text %></td>
-        <td><%= factoid.url %></td>
+        <td><a target="_blank"  href="<%=factoid.url%>">Link</a></td>
         <td><%= link_to 'Show', factoid %></td>
         <td><%= link_to 'Edit', edit_factoid_path(factoid) %></td>
         <td><%= link_to 'Destroy', factoid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
