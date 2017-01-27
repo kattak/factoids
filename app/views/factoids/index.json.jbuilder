@@ -1,0 +1,1 @@
+json.array! @factoids, partial: 'factoids/factoid', as: :factoid
