@@ -18,7 +18,7 @@ class FactoidsController < ApplicationController
     @factoid = Factoid.new
 
     respond_to do |format|
-      format.js {}
+      format.js {render :_new, locals:{factoid: @factoid}}
       format.html
     end
   end

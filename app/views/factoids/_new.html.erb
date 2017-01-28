@@ -1,27 +1,17 @@
 <%= form_for(factoid) do |f| %>
-  <% if factoid.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(factoid.errors.count, "error") %> prohibited this factoid from being saved:</h2>
 
-      <ul>
-      <% factoid.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field hidden">
-    <%= f.label :text %>
-    <%= f.text_area :text %>
+  <div class="field" display='none'>
+    <%= f.label :text, hidden:true %>
+    <%= f.text_area :text, hidden:true %>
   </div>
 
-  <div class="field hidden">
-    <%= f.label :url %>
-    <%= f.text_area :text %>
+  <div class="field" display="none">
+    <%= f.label :url, hidden:true %>
+    <%= f.text_area :text, hidden:true %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'truth', class:"submit-button"%>
   </div>
 <% end %>
