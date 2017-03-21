@@ -1,6 +1,7 @@
 class FactoidsController < ApplicationController
   before_action :set_factoid, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token, :only => [:new, :create]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /factoids
   # GET /factoids.json
@@ -34,7 +35,7 @@ class FactoidsController < ApplicationController
 
     respond_to do |format|
       if @factoid.save
-        format.html { redirect_to @factoid, notice: 'Factoid was successfully created.' }
+        format.html { render :"ext_show", notice: 'Factoid was successfully created.' }
         format.json { render :show, status: :created, location: @factoid }
       else
         format.html { render :new }
