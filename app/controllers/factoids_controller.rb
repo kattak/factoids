@@ -36,6 +36,7 @@ class FactoidsController < ApplicationController
     respond_to do |format|
       if @factoid.save
         format.html { render :"ext_show", notice: 'Factoid was successfully created.' }
+        format.js {render :"_show", layout: false}
         format.json { render :show, status: :created, location: @factoid }
       else
         format.html { render :new }
