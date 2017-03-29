@@ -1,7 +1,7 @@
 class FactoidsController < ApplicationController
   before_action :set_factoid, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token, :only => [:new, :create]
-  before_filter :authenticate_user!, except: [:index, :show]
+  # before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /factoids
   # GET /factoids.json
@@ -32,6 +32,7 @@ class FactoidsController < ApplicationController
   # POST /factoids.json
   def create
     @factoid = Factoid.new(factoid_params)
+    @factoid.user = current_user
 
     respond_to do |format|
       if @factoid.save

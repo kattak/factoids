@@ -9,5 +9,11 @@
   <a href="<%=@factoid.url%>">Link</a>
 </p>
 
+<p>
+  <strong>User:</strong>
+
+  <%= @factoid.user ? @factoid.user.username : "anonymous" %>
+</p>
+
 <%= link_to 'Edit', edit_factoid_path(@factoid) %> |
 <%= link_to 'Back', factoids_path %>

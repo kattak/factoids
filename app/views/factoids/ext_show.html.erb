@@ -11,5 +11,11 @@
 
 </p>
 
+<p>
+  <%= @factoid.user ? @factoid.user.username : "anonymous" %>
+</p>
+
+<a href= '<%=BASE_URL+factoid_path(@factoid) %>' id="in-site">View in site</a>
+
 
 <%= link_to 'Back', factoids_path %>
